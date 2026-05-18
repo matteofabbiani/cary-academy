@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(Flip, ScrollTrigger, SplitText);
 
   const items = [...document.querySelectorAll(".case-study_item")];
+
   if (!items.length) return;
 
   const parent = items[0].parentNode;
@@ -52,7 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
   tl3.fromTo(
     ".cms-wrapper",
     { opacity: 0 },
-    { opacity: 1, delay: 0.3 }
+    {
+      opacity: 1,
+      delay: 0.3,
+    }
   );
 
   tl3.fromTo(
@@ -72,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("load", () => {
     if (typeof lenis !== "undefined") {
-      lenis.scrollTo(0, { immediate: true });
+      lenis.scrollTo(0, {
+        immediate: true,
+      });
     }
   });
 
@@ -114,13 +120,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".prompt_scroll").scrollTop = 0;
 
     setTimeout(() => {
-      item = document.querySelector(".is-active .case-study_card");
-    );
+      item = document.querySelector(
+        ".is-active .case-study_card"
+      );
 
       flipInto(modalTarget);
     }, 1000);
 
-    SplitText.create(
+    const split = SplitText.create(
       document.querySelectorAll(".prompt_result > *"),
       {
         type: "words, chars",
@@ -269,9 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
       caseStudyItems.forEach(function (el) {
         const itemTitle =
           el.querySelector(".case-study_title") &&
-          el
-            .querySelector(".case-study_title")
-            .textContent.trim();
+          el.querySelector(".case-study_title").textContent.trim();
 
         el.classList.toggle(
           "is-active",
