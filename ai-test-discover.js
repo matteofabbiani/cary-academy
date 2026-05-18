@@ -114,9 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".prompt_scroll").scrollTop = 0;
 
     setTimeout(() => {
-      item = document.querySelector(
-        ".is-active .case-study_card"
-      );
+      item = document.querySelector(".is-active .case-study_card");
+    );
 
       flipInto(modalTarget);
     }, 1000);
